@@ -1,0 +1,2 @@
+- React elements are just objects. They can be passed as props like any other data
+- [ ] React components
