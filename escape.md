@@ -1,0 +1,3 @@
+- [ ] https://www.w3.org/International/questions/qa-escapes#use
+- > The `html/template` automatically ***HTML-escaped*** the titles so that `"<"`, `">"` appear literally (`"&lt;"`). Had we use the `text/template`, the four-character string `"&lt;"` would have been rendered as a less-than character `"<"`, and the string `"<link>"` would have become a `link` element
+- > https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html
