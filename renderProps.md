@@ -159,7 +159,7 @@
                     {/* 1. pass a function */}
                     <Mouse render={mouse => (
                         <Cat mouse={mouse} />
-                    )cod}>
+                    )}>
                 </div>
             )
         }
