@@ -2,7 +2,7 @@
 - If you only want to passing some props through many levels, [component composition](https://reactjs.org/docs/context.html#before-you-use-context) is often a simpler solution than context
 - It means **Passing components down**
     - This patterns is sufficient for many cases when you need to **decouple a child from its immediate parents**
-    - [ ] Apply render props if the child needs to communicate with the parent before rendering
+    - [x] Apply render props if the child needs to communicate with the parent before rendering
 - Applying context makes component reuse more difficult
 ## Scenarios
 - A `Page` component that passes a `user` and `avatarSize` prop several levels down so that deeply nested `Link` and `Avatar` components can read it
