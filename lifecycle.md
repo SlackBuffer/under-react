@@ -1,0 +1,1 @@
+- `componentDidMount` runs **after** the component output has been rendered to the **DOM**

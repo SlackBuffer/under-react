@@ -26,3 +26,8 @@
 
     - > Applications built with just React usually have a single root DOM node
     - > If you're integrating React into an existing app, you may have as many isolated root DOM nodes as you like
+- Class components should always call the base constructor with `props`
+- `this.props` is set up by React itself and `this.state` has a special meaning
+    - It's free to add additional fields to the class manually if you need to store something that doesn't participate in the data flow (like `this.timerID`)
+- Do not modify state directly. Use `setState`
+    - The only place where you can assign `this.state` is the constructor
