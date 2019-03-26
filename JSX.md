@@ -15,7 +15,6 @@
 
 - Any valid JavaScript expression can be put inside the ***curly braces*** in JSX
 - Splitting JSX over multiple lines is good for readability
-    - While it isn’t required, when doing this, it's recommend to wrap it in parentheses to avoid the pitfalls of [ ] [automatic semicolon insertion](https://stackoverflow.com/questions/2846283/what-are-the-rules-for-javascripts-automatic-semicolon-insertion-asi)
 - Since JSX is closer to JavaScript than to HTML, React DOM uses **`camelCase`** property naming convention instead of HTML attribute names
 
 - **JSX is an expression**
@@ -81,8 +80,7 @@
     - Online Babel compiler
 - The first part of a JSX tag determines the type of React element
     - Capitalized types indicates that the JSX tag is referring to a React component
-    - These tags get compiled into a direct reference to the **named variable**
-        - So if you use the JSX `<Foo />`, `Foo` must be in scope
+    - These tags get compiled into a direct reference to the **named variable**. So if you use the JSX `<Foo />`, `Foo` must be in scope
 - Since JSX compiles into calls to `React.createElement`, the `React` library must also always be in scope from your JSX code
     - If you don’t use a JavaScript bundler and loaded React from a `<script>` tag, it is already in scope as the `React` global
 - You can also refer to a React component using dot-notation from within JSX
@@ -99,7 +97,7 @@
     ```
 
     - This is convenient if you have a single module that exports many React components
-- When an element type starts with a lowercase letter, it refers to a **built-in** component like `<div>` or `<span>` and results in a **string** `'div'` or `'span'` passed to `React.createElement`
+- When an element type starts with a lowercase letter, it refers to a **built-in** component like `<div>` or `<span>` and results in a ***string*** `'div'` or `'span'` passed to `React.createElement`
 - Types that start with a capital letter like `<Foo />` compile to `React.createElement(Foo)` and correspond to a component defined or imported in your JavaScript file
     - Naming components with a capital letter is recommended
     - If you do have a component that starts with a lowercase letter, assign it to a capitalized variable before using it in JSX
@@ -162,7 +160,7 @@
     }
     ```
 
-- Function as children 
+- **Function as children** 
 
     ```jsx
     function Repeat(props) {
@@ -186,3 +184,5 @@
     - This can be useful to conditionally render React elements
     - Some falsy values such as `0` are still rendered by React
     - If you want a value like `false`, `true`, `null`, or `undefined` to appear in the output, you have to convert it to a string first (using `String()`)
+- Conditional rendering - In JavaScript, `true && expression` always evaluates to `expression`, and `false && expression` always evaluates to `false`
+    - Whenever conditions become too complex, it might be a good time to extract a component

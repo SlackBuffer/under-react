@@ -111,7 +111,7 @@
                 return (
                     <div>
                         <h1>Move the mouse around!</h1>
-                        <Mouse />
+                        <MouseWithCat />
                     </div>
                 )
             }
@@ -156,7 +156,7 @@
             return (
                 <div style={{ height: '100vh', width: '100vw' }}>
                     <h1>Move the mouse around!</h1>
-                    {/* 1. pass a function */}
+                    {/* 1. pass a function that returns a component to be decorated */}
                     <Mouse render={mouse => (
                         <Cat mouse={mouse} />
                     )}>
@@ -257,11 +257,12 @@
         <p>The mouse position is {mouse.x}, {mouse.y}</p>
     )} />
 
+    // put `children` attribute directly in the element
     <Mouse>
         {mouse => (
             <p>The mouse position is {mouse.x}, {mouse.y}</p>
-        )} 
-    />
+        )}
+    <Mouse />
     class Mouse extends React.Component {
         constructor(props) {
             super(props)
@@ -285,6 +286,6 @@
     }
     ```
 
-    - The `children` prop doesn't have to be named in the list of "attributes" in the JSX element, it can be directly put inside the element
+    - The `children` prop doesn't have to be named in the list of "attributes" in the JSX element, it can be directly put inside the element (function as children)
 # Caveats
 # Be careful when using render props with [ ] `React.PureComponent`

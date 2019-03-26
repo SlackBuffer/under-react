@@ -31,3 +31,26 @@
     - It's free to add additional fields to the class manually if you need to store something that doesn't participate in the data flow (like `this.timerID`)
 - Do not modify state directly. Use `setState`
     - The only place where you can assign `this.state` is the constructor
+
+- Returning `null` prevents component from rendering
+- Returning `null` from a component’s `render` method does not affect the firing of the component’s lifecycle methods
+
+- A "key" is a special **string attribute** you need to include when creating lists of elements
+- Keys help React identify which items have changed, are added, or are removed
+- Keys should be given to the elements inside the array to give the elements a ***stable identity***
+    - If the key is the same as before React assumes that the DOM element **represents the same component**
+        - > https://jsbin.com/wohima/edit?output
+        - > https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318
+    - If you choose not to assign an explicit key to list items then React will default to using indexes as keys
+- Using indexes for keys is not recommended if the order of items may change. This can negatively impact performance and may cause issues with component state
+- Keys used within arrays should be unique among their siblings
+- Keys don't need to be globally unique
+- Keys serve as a hint to React but they **don't get passed** to your components
+- If the `map` body is too nested, it might be a good time to extract a component
+
+- In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input
+- In React, mutable state is typically kept in their state property of components, and only updated with `setState` (controlled component)
+- **Specifying** the `value` prop on a controlled component **prevents** the user from changing the input unless you desire so
+    - If you’ve specified a value but the input is still editable, you may have accidentally set value to `undefined` or `null`
+- Fully-fledged solutions
+    - [Formik](https://jaredpalmer.com/formik/): validation, keeping track of the visited fields, handling form submission (built on the same principles of controlled components and managing state )
