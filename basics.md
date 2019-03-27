@@ -57,6 +57,8 @@
     - [Formik](https://jaredpalmer.com/formik/): validation, keeping track of the visited fields, handling form submission (built on the same principles of controlled components and managing state )
 - In an uncontrolled component, form data is handled by the DOM itself
     - Use a `ref` to get form values from the DOM
+- [Controlled vs uncontrolled](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/)
+    - Instant **field validation**; conditionally disabling submit button; **enforcing input format**; several inputs for one piece of data; dynamic (variable number of) input fields
 
 - Lift the shared state up to the closest common ancestor
 - When you see something wrong in the UI, you can use React Developer Tools to inspect the props and move up the tree until you find the component responsible for updating the state

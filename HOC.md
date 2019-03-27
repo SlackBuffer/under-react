@@ -240,7 +240,7 @@
 - While the convention for higher-order components is to pass through all props to the wrapped component, this does not work for refs
 - `ref` is not really a prop - like `key`, it's handled specially be React
     - If you add a ref to an element whose component is the result of a HOC, the ref refers to an instance of the **outermost container component**, not the wrapped component
-    - The solution is use the [ ] `React.forwardRef`
+    - The solution is use the [x] `React.forwardRef`
 # `compose`
 - `reduce`
 
