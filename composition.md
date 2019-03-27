@@ -31,7 +31,7 @@
 
 ## Specialization
 - Sometimes we think about components as being **"special cases"** of other components
-- In React this is also achieved by composition - a more specific component renders a more generic oen and configures with props
+- In React this is also achieved by composition - a more specific component renders a more generic one and configures it with props
 
     ```jsx
     function Dialog(props) {

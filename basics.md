@@ -50,7 +50,33 @@
 
 - In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input
 - In React, mutable state is typically kept in their state property of components, and only updated with `setState` (controlled component)
+- In a controlled component, form data is handled by a React component
 - **Specifying** the `value` prop on a controlled component **prevents** the user from changing the input unless you desire so
     - If you’ve specified a value but the input is still editable, you may have accidentally set value to `undefined` or `null`
 - Fully-fledged solutions
     - [Formik](https://jaredpalmer.com/formik/): validation, keeping track of the visited fields, handling form submission (built on the same principles of controlled components and managing state )
+- In an uncontrolled component, form data is handled by the DOM itself
+    - Use a `ref` to get form values from the DOM
+
+- Lift the shared state up to the closest common ancestor
+- When you see something wrong in the UI, you can use React Developer Tools to inspect the props and move up the tree until you find the component responsible for updating the state
+![](https://reactjs.org/react-devtools-state-ef94afc3447d75cdc245c77efb0d63be.gif)
+
+- Single responsibility principle: ideally, a component should only do one thing
+- Thinking in React
+    1. Break The UI Into A Component Hierarchy
+    2. Build A Static Version in React
+        - Just use props. Don't use state at all. State is reversed for interactivity
+        - In simpler examples, it’s usually easier to go top-down, and on larger projects, it’s easier to go bottom-up and write tests as you build
+        - At the end of this step, the components will only have `render()` methods
+    3. Identify The Minimal (but complete) Representation Of UI State
+        - Think of the minimal set of mutable state that your app needs
+            1. Is it passed in from a parent via props? If so, it probably isn’t state
+            2. Does it remain unchanged over time? If so, it probably isn’t state
+            3. Can you compute it based on any other state or props in your component? If so, it isn’t state
+        - **Compute** everything else you need on-demand
+    4. * Identify Where Your State Should Live
+    5. Add Inverse Data Flow
+        - The components **deep** in the hierarchy need to update the state of components top in the hierarchy
+
+- React is one-way data flow (one-way binding)
