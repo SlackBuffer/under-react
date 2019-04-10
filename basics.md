@@ -81,4 +81,8 @@
     5. Add Inverse Data Flow
         - The components **deep** in the hierarchy need to update the state of components top in the hierarchy
 
+- `key` is the only attribute that can be passed to `Fragment` for now
+
 - React is one-way data flow (one-way binding)
+- The only method you must define in a `React.Component` subclass called `render`
+    - Creating your own base component classes is strongly recommended against

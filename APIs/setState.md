@@ -15,7 +15,7 @@
     - > The second parameter to `setState` is an optional callback function that will be executed once `setState` is **completed** and the component is **re-rendered**. Generally we recommend using `componentDidUpdate` for such logic instead
 - `setState(object)`
     - This form is also asynchronous. Multiple call during the same circle may be batched together
-    - If you attempt to increment to increment an item quantity more than once in the same circle, that will result in the equivalent of
+    - If you attempt to increment to increment an item quantity more than once **in the same circle**, that will result in the equivalent of
 
         ```js
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
@@ -30,4 +30,4 @@
         - Subsequent calls will override value from the previous calls in the same circle, so the quantity will only be incremented once
     - If the next state depends on the current state, we recommend using the updater function form
 - https://stackoverflow.com/questions/48563650/does-react-keep-the-order-for-state-updates/48610973#48610973
-- [ ] https://github.com/facebook/react/issues/11527#issuecomment-360199710
+- [x] https://github.com/facebook/react/issues/11527#issuecomment-360199710
